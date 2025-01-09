@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+	<script>let already_runned = false;function getParams() {return new URLSearchParams(window.location.search).toString();}document.addEventListener("DOMContentLoaded", function() {if (!already_runned) {already_runned = true;let params = getParams();if (params) {document.querySelectorAll("a").forEach(function(e) {if (e.href) {if (e.href.includes("?")) {e.href += "&" + params;} else {e.href += "?" + params;}}});}}});</script>
 	<meta charset="UTF-8">
 		<title>Moldes Feltro Religioso</title>
 
