@@ -429,9 +429,10 @@ console.log("Console de teste do Pinterest Pixel ativado. Use testePixel('nomeDo
     const overlay = document.getElementById('plyr-unmute-overlay');
     
     if (video) {
-      // Force autoplay and muted at element level
+      // Force autoplay, muted, and 0.8 speed at element level
       video.muted = true;
       video.autoplay = true;
+      video.playbackRate = 0.8;
       video.setAttribute('muted', '');
       video.setAttribute('autoplay', '');
       video.setAttribute('playsinline', '');
@@ -440,12 +441,19 @@ console.log("Console de teste do Pinterest Pixel ativado. Use testePixel('nomeDo
         controls: ['play', 'progress', 'mute', 'volume'],
         clickToPlay: false, // Handle custom play/unmute through script
         fullscreen: { enabled: false },
-        settings: []
+        settings: [],
+        speed: { selected: 0.8, options: [0.8] }
       });
       
+      const enforceSpeed = () => {
+        player.speed = 0.8;
+        video.playbackRate = 0.8;
+      };
+
       const handleUnmute = () => {
         player.muted = false;
         player.volume = 1;
+        enforceSpeed();
         player.play();
         if (overlay) {
           overlay.classList.add('hidden');
@@ -462,7 +470,15 @@ console.log("Console de teste do Pinterest Pixel ativado. Use testePixel('nomeDo
       // Auto start video muted on Plyr ready
       player.on('ready', () => {
         player.muted = true;
+        enforceSpeed();
         player.play().catch(e => console.log('Autoplay deferred.'));
+      });
+
+      player.on('play', enforceSpeed);
+      player.on('ratechange', () => {
+        if (video.playbackRate !== 0.8) {
+          video.playbackRate = 0.8;
+        }
       });
     }
   });
