@@ -279,6 +279,77 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   .plyr__control[data-plyr="fullscreen"] {
     display: none !important;
   }
+
+  /* Enforce no horizontal scrolling on viewport */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Responsive styling for the counter widget text São mais de 1.678 Clientes Satisfeitos */
+  .elementor-element-1f27e77 .elementor-counter {
+    text-align: center !important;
+  }
+  .elementor-element-1f27e77 .elementor-counter-number-wrapper {
+    display: block !important;
+    font-size: 26px !important;
+    line-height: 1.4 !important;
+    font-weight: 700 !important;
+    color: #DA36F4 !important;
+  }
+  .elementor-element-1f27e77 .elementor-counter-number-prefix,
+  .elementor-element-1f27e77 .elementor-counter-number,
+  .elementor-element-1f27e77 .elementor-counter-number-suffix {
+    display: inline !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    font-weight: inherit !important;
+    color: inherit !important;
+    position: static !important;
+    float: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .elementor-element-1f27e77 .elementor-counter-title {
+    font-size: 18px !important;
+    margin-bottom: 8px !important;
+    font-weight: 600 !important;
+  }
+
+  @media (max-width: 767px) {
+    .elementor-element-1f27e77 .elementor-counter-number-wrapper {
+      font-size: 18px !important;
+      line-height: 1.5 !important;
+    }
+    .elementor-element-1f27e77 .elementor-counter-title {
+      font-size: 15px !important;
+    }
+  }
+
+  /* List Widget Styling overrides */
+  /* Force text of list to be white */
+  .elementor-element-1294572 .elementor-icon-list-text {
+    color: #ffffff !important;
+  }
+  
+  /* Force checkmark icon SVG to be green #23D83C */
+  .elementor-element-1294572 .elementor-icon-list-icon svg {
+    fill: #23D83C !important;
+    color: #23D83C !important;
+  }
+
+  /* Fix staggered alignment for centered list */
+  .elementor-element-1294572 .elementor-icon-list-items {
+    display: inline-block !important;
+    text-align: left !important;
+  }
+  
+  .elementor-element-1294572 .elementor-widget-container {
+    text-align: center !important;
+  }
 </style>
 
 </head>
@@ -905,14 +976,53 @@ startFakeNotifications();
 				</div>
 				<div class="elementor-element elementor-element-1f27e77 elementor-widget elementor-widget-counter" data-id="1f27e77" data-element_type="widget" data-e-type="widget" data-widget_type="counter.default">
 				<div class="elementor-widget-container">
-							<div class="elementor-counter">
-			<div class="elementor-counter-title">Confira alguns...</div>			<div class="elementor-counter-number-wrapper">
-				<span class="elementor-counter-number-prefix">São mais de </span>
-				<span class="elementor-counter-number" data-duration="2000" data-to-value="1678" data-from-value="1" data-delimiter=",">1</span>
-				<span class="elementor-counter-number-suffix"> Clientes Satisfeitos</span>
-			</div>
-		</div>
-						</div>
+          <style>
+            .clean-counter-container {
+              text-align: center;
+              font-family: 'Poppins', sans-serif;
+              padding: 15px 10px;
+            }
+            .clean-counter-title {
+              font-size: 18px;
+              font-weight: 600;
+              color: #444444;
+              margin-bottom: 8px;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+            }
+            .clean-counter-body {
+              font-size: 26px;
+              line-height: 1.4;
+              font-weight: 800;
+              color: #DA36F4;
+            }
+            .clean-counter-highlight {
+              font-size: 32px;
+              font-weight: 900;
+              background: linear-gradient(120deg, #DA36F4, #9B30FF);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+            @media (max-width: 767px) {
+              .clean-counter-title {
+                font-size: 15px;
+              }
+              .clean-counter-body {
+                font-size: 20px;
+                line-height: 1.5;
+              }
+              .clean-counter-highlight {
+                font-size: 24px;
+              }
+            }
+          </style>
+          <div class="clean-counter-container">
+            <div class="clean-counter-title">Confira alguns...</div>
+            <div class="clean-counter-body">
+              São mais de <span class="clean-counter-highlight">1.678</span> Clientes Satisfeitos
+            </div>
+          </div>
+				</div>
 				</div>
 				<div class="elementor-element elementor-element-57d54ee elementor-widget elementor-widget-html" data-id="57d54ee" data-element_type="widget" data-e-type="widget" data-widget_type="html.default">
 				<div class="elementor-widget-container">
