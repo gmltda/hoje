@@ -6,7 +6,6 @@ const campaigns = [
   "bolsas-de-croche-lucrativas",
   "costura-criativa",
   "criacao-de-camaroes",
-  "croche-2500-modelos",
   "moldes-de-costura-premium",
   "resina-artistica"
 ];
