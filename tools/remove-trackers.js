@@ -3,10 +3,9 @@ const path = require('path');
 
 const campaigns = [
   "2500-modelos-de-croche",
+  "bolsas-costura-criativa",
   "bolsas-de-croche-lucrativas",
-  "costura-criativa",
-  "criacao-de-camaroes",
-  "moldes-de-costura-premium",
+  "moldes-de-costura",
   "resina-artistica"
 ];
 
